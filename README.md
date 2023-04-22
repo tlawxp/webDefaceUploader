@@ -7,6 +7,6 @@
 
 ## Download
 
-"""bash
+```bash
 git clone https://github.com/tlawxp/webDefaceUploader
-"""
+```
