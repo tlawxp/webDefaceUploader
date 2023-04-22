@@ -1,0 +1,24 @@
+@import "color";
+
+@media screen and (max-width: 576px){
+  .nav-bar { 
+    .btn {
+      display: none;
+    }
+    .btn2 {
+      margin-right: 50px;
+      align-items: center;
+      display: block;
+      button {
+        background: none;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        i {
+          color: map-get($color,"violet");
+          font-size: 1.8em;
+        }
+      }
+    }
+  }
+}

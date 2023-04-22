@@ -1,0 +1,34 @@
+@mixin logo(){
+  text-transform: capitalize;
+  color: map-get($color,"white");
+  font-weight: bold;
+  font-size: 1.8em;
+  font-family: Poppins-Black;
+}
+@mixin button($margin-r,$fnsize){
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  margin-right: $margin-r;
+  font-size: $fnsize;
+  i {
+    color: map-get($color,"violet");
+    font-size: 1.8em;
+  }
+}
+@mixin warning($warna){
+  background: $warna;
+  color: map-get($color,"black");
+  border-radius: 3px;
+  padding: 10px 5px;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: capitalize;
+}
+@mixin h1($txt_transform){
+  margin: 20px 0;
+  text-transform: $txt_transform;
+  color: map-get($color,"violet");
+  font-size: 1.8em;
+}

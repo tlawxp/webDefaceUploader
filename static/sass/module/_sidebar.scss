@@ -1,0 +1,119 @@
+@import "mixin";
+@import "color";
+
+.nav-bar {
+  position: fixed;
+  background-color: map-get($color,"black");
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  justify-content: space-between;
+  z-index: 9999;
+  box-shadow: 0 0 10px map-get($color,"black");
+  align-items: center;
+  h1 {
+    @include logo();
+    margin-left: 50px;
+  }
+  .btn2 { display: none; }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    a {
+      padding: 5px 10px;
+      margin: 5px;
+      background: map-get($color,"violet");
+      color: map-get($color,"black");
+      border-radius: 2px;
+      i {
+        color: map-get($color,"black");
+        font-size: 1em;
+      }
+    }
+  }
+}
+.bgsidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  left: -500px;
+  background-color: rgba(0,0,0,.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 99999;
+  .sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: map-get($color,"black");
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid map-get($color,"white");
+      margin-bottom: 10px;
+      h1 {
+        margin-left: 20px;
+        @include logo();
+      }
+      button {
+        @include button(20px,1em);
+      }
+    }
+    ul {
+      li {
+        margin: 5px 0;
+        .active {
+          background: map-get($color,"violet");
+          color: map-get($color,"black");
+          border-top-right-radius: 30px;
+          border-bottom-right-radius: 30px;
+        }
+        a {
+          padding: 15px 10px;
+          width: 100%;
+          color: map-get($color,"white");
+          text-transform: capitalize;
+          font-size: 1em;
+          transition: 0.3s ease;
+          &:hover {
+            background: map-get($color,"violet");
+            color: map-get($color,"black");
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+          }
+        }
+      }
+      .borderB {
+        border-bottom: 1px solid map-get($color,"white");
+      }
+    }
+  }
+}
+
+@keyframes sidebarOpen {
+  from {
+    opacity: 0;
+    left: -500px;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes sidebarClose {
+  from {
+    opacity: 1;
+    left: 0;
+  }
+  to {
+    opacity: 0;
+    left: -500px;
+    z-index: -99999;
+  }
+}

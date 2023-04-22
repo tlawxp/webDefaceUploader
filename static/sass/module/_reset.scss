@@ -1,0 +1,32 @@
+@import "color";
+
+html {
+  scroll-behavior: smooth;
+}
+::placeholder {
+  color: map-get($color,"white");
+}
+::selection {
+  background: map-get($color,"violet");
+  color: map-get($color,"black");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(to bottom right, rgba(79,51,176,1), rgba(210,53,165));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: map-get($color,"white");
+  font-family: Poppins;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+li { list-style: none; }
+h1 { font-size: 2em; }
